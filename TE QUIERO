@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Corazón Palpitando</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .corazon {
+      width: 100px;
+      height: 90px;
+      background-color: red;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: palpitar 1s infinite;
+    }
+
+    .corazon::before,
+    .corazon::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .corazon::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .corazon::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes palpitar {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="corazon"></div>
+</body>
+</html>
